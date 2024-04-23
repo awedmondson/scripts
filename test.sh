@@ -1,5 +1,8 @@
 #/bin/bash
-for i in range 4:
-    
-string = "this is a line of inserted text"
+rep=5
+for i in $(seq 1 $rep); do 
+    echo "      nifi-$i" >> insert.text
+    done
+
 sed '/   marker/ r insert.text' sample.yaml
+rm -rf insert.text
